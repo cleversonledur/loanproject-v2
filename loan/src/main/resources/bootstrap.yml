@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: loan
+  cloud:
+    config:
+      enabled: false
+
+uri: http://config:9090

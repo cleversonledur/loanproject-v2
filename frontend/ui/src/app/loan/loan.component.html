@@ -1,0 +1,77 @@
+<div class="container">
+  <br />
+  <h3>Simulação de Empréstimo</h3>
+  <br/>
+  <div class="card" *ngIf="simulated">
+    <div class="row">
+      <div class="col s3">
+        <label>Juros Mensais</label>
+        <p>{{loan.ratePerMonth | currency:'BRL':true}}</p>
+      </div>
+      <div class="col s3">
+        <label>Total do Empréstimo</label>
+        <p>{{loan.total | currency:'BRL':true}}</p>
+      </div>
+
+      <div class="col s3">
+        <label>Mensalidade</label>
+        <p>{{loan.monthlyPayment | currency:'BRL':true}}</p>
+      </div>
+      <div class="col s3">
+        <label>Juros totais</label>
+        <p>{{loan.interest | currency:'BRL':true}}</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="card">
+    <div class="row">
+      <div class="col s3">
+        <label>Nome do Cliente</label>
+        <p>{{ customer.name }}</p>
+      </div>
+      <div class="col s3">
+        <label>Rendimentos</label>
+        <p>{{ customer.income | currency:'BRL':true}}</p>
+      </div>
+      <div class="col s3">
+        <label>Tipo de Risco</label>
+        <p>{{ customer.riskType }}</p>
+      </div>
+      <div class="col s3">
+        <label>Endereço</label>
+        <p>{{ customer.address }}</p>
+      </div>
+    </div>
+  </div>
+
+  <form class=" form-horizontal" (ngSubmit)="simulateLoan()">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+
+        <input [(ngModel)]="loan.months" placeholder="6" name="months" id="months" class="validate" type="text">
+        <label for="name" class="active">Meses</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+
+        <input [(ngModel)]="loan.presentValue" placeholder="4000" name="present_value" id="present_value" class="validate" type="text">
+        <label for="present_value" class="active">Valor do Empréstimo</label>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="input-field col s6">
+        <button class="waves-effect waves-light btn" type="submit">Simular
+          <i class="material-icons right">send</i>
+        </button>
+
+      </div>
+    </div>
+
+  </form>
+</div>

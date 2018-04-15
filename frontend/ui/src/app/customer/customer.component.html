@@ -1,0 +1,48 @@
+<div class="container">
+  <br/>
+  <h3>Lista de Clientes</h3>
+  <br/>
+  <table class="table striped highlight centered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Rendimento</th>
+        <th>Risco</th>
+        <th>Endereço</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let customer of customerList; let i = index;">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.income  | currency:'BRL':true}}</td>
+        <td>{{ customer.riskType }}</td>
+        <td>{{ customer.address }}</td>
+        <td>
+          <button data-toggle="modal" (click)="loanSimulate(customer.id)" class="btn btn-success">Simular Empréstimo</button>
+        </td>
+
+        <td>
+          <button (click)="updateCustomer(customer.id)" class="btn blue lighten-1">
+            <i class="fas fa-edit"></i>
+          </button>
+        </td>
+        <td>
+          <button data-toggle="modal" (click)="confirmRemoveCustomer(customer)" class="btn red lighten-1">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+
+    
+  </table>
+  <a routerLink="./register" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+</div>

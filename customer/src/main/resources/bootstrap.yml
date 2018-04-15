@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: customer
+  cloud:
+    config:
+      enabled: false
+uri: http://config:9090

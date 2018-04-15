@@ -1,0 +1,30 @@
+
+server:
+    port: 9094
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:9091/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+ribbon:
+  eureka:
+    enabled: true
+
+spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+
+  datasource:
+    url: jdbc:mysql://loan-db:3306/loans
+    username: loans-user
+    password: loans
+    
+    

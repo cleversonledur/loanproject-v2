@@ -1,0 +1,47 @@
+<div class="container">
+  <br />
+  <h3>Cadastro de Cliente</h3>
+  <br/>
+  <form class="form-horizontal" (ngSubmit)="saveCustomer()">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+
+        <input [(ngModel)]="customer.name" placeholder="João da Silva" name="name" id="name" class="validate" type="text">
+        <label for="name" class="active">Nome</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">monetization_on</i>
+
+        <input (input)="defineRisk()" [(ngModel)]="customer.income" placeholder="2500,00" id="income" name="income" class="validate"
+          type="number">
+        <label for="income" class="active">Rendimento Mensal</label>
+      </div>
+    </div>
+    <div class="row">
+        <span>Tipo de Risco:</span> {{customer.riskType}}
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">home</i>
+
+        <input [(ngModel)]="customer.address" name="address" placeholder="Rua XyZ n° 10. Porto Alegre - RS" id="address" class="validate"
+          type="text">
+        <label for="address" class="active">Endereço</label>
+      </div>
+    </div>
+    
+    <div class="">
+      <div class="input-field col s6">
+        <button class="waves-effect waves-light btn" type="submit">Salvar         
+          <i class="material-icons right">send</i>
+        </button>
+
+      </div>
+    </div>
+
+  </form>
+</div>

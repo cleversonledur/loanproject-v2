@@ -1,0 +1,18 @@
+server:
+  port: 9095
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:9091/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+ribbon:
+  eureka:
+    enabled: true
+

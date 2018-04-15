@@ -1,0 +1,45 @@
+version: '2' 
+
+services:
+  
+  eureka:
+    build: ./eureka-server/.
+    image: eureka-server
+    restart: always
+    ports:
+      - 9091:9091
+
+  gateway:
+    build: ./gateway-server/.
+    image: gateway-server
+    restart: always
+    ports:
+     - 8765:8765
+
+  loans:
+    build: ./loan/.
+    image: loan
+    restart: always
+    ports:
+      - 9095:9095
+
+  customer:
+    build: ./customer/.
+    image: customer
+    restart: always
+    ports:
+      - 9094:9094
+
+  loan-db:
+    image: mysql
+    restart: always
+    volumes:
+       - ./dbdata:/var/lib/mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: loansproject!@#
+      MYSQL_DATABASE: loans
+      MYSQL_USER: loans-user
+      MYSQL_PASSWORD: loans
