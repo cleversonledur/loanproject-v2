@@ -1,7 +1,5 @@
 package br.com.loanproject.loan.model;
 
-import java.math.BigDecimal;
-
 import br.com.loanproject.commons.enumerate.RiskType;
 
 public abstract class Loan {

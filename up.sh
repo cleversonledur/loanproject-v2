@@ -1,3 +1,7 @@
 #!/bin/sh
 
-docker-compose up 
+docker-compose up -d
+
+cd frontend/ui/
+ng serve
+
